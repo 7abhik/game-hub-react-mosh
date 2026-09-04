@@ -12,3 +12,7 @@ bulging game cards 11:30PM - 01 AM done
 
 displaying platform icons 7:30PM - 9:00PM
 15 improve user experience 10PM - 11:30PM
+
+## 4th September
+
+16 Refactoring Code. 6:15PM
