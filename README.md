@@ -16,3 +16,7 @@ displaying platform icons 7:30PM - 9:00PM
 ## 4th September
 
 16 Refactoring Code. 6:15PM
+
+## 7th September
+
+18 Create genereric data fetching hook 6:15 PM
