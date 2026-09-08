@@ -20,3 +20,8 @@ displaying platform icons 7:30PM - 9:00PM
 ## 7th September
 
 18 Create genereric data fetching hook 6:15 PM
+24 Filter Games by platform done at 10:30
+
+## 8th September
+
+25 Refactor extracting query parameter 7:06 PM
