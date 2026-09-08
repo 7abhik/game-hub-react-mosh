@@ -5,10 +5,11 @@ import GenreList from "./components/GenreList";
 import { useState } from "react";
 import { Genres } from "./hooks/useGenres";
 import PlatformFilter from "./components/PlatformFilter";
+import { Platform } from "./hooks/usePlatform";
 
 export interface GameQuery {
   genre: Genres | null;
-  platformId: number | null;
+  platform: Platform | null;
 }
 
 function App() {
@@ -44,9 +45,10 @@ function App() {
         </Show>
         <GridItem area="main">
           <PlatformFilter
-            onSelect={(selectedPlatformId) => {
-              setGameQuery({ ...gameQuery, platformId: selectedPlatformId });
+            onSelect={(platform) => {
+              setGameQuery({ ...gameQuery, platform });
             }}
+            selectedPlatform={gameQuery.platform}
           ></PlatformFilter>
           <GameGrid gameQuery={gameQuery} />
         </GridItem>

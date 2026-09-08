@@ -1,28 +1,36 @@
-import { Select, Stack } from "@chakra-ui/react";
-import usePlatform from "../hooks/usePlatform";
+import {
+  Button,
+  Menu,
+  MenuButton,
+  MenuItem,
+  MenuList,
+  Select,
+  Stack,
+} from "@chakra-ui/react";
+import usePlatform, { Platform } from "../hooks/usePlatform";
+import { BsChevronDown } from "react-icons/bs";
+import { useState } from "react";
 
 interface Props {
-  onSelect: (selectedPlatformId: number) => void;
+  onSelect: (selectedPlatform: Platform) => void;
+  selectedPlatform: Platform | null;
 }
 
-const PlatformFilter = ({ onSelect }: Props) => {
+const PlatformFilter = ({ onSelect, selectedPlatform }: Props) => {
   const { data } = usePlatform();
   return (
-    <Stack paddingLeft="10px" spacing={3} width="315px">
-      <Select
-        placeholder="Select Platform"
-        size="lg"
-        onChange={(event) => {
-          onSelect(parseInt(event.target.value));
-        }}
-      >
+    <Menu>
+      <MenuButton as={Button} rightIcon={<BsChevronDown />}>
+        {selectedPlatform?.name || "Platforms"}
+      </MenuButton>
+      <MenuList>
         {data.map((platform) => (
-          <option key={platform.id} value={platform.id}>
+          <MenuItem key={platform.id} onClick={() => onSelect(platform)}>
             {platform.name}
-          </option>
+          </MenuItem>
         ))}
-      </Select>
-    </Stack>
+      </MenuList>
+    </Menu>
   );
 };
 
