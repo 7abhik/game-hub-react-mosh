@@ -25,3 +25,5 @@ displaying platform icons 7:30PM - 9:00PM
 ## 8th September
 
 25 Refactor extracting query parameter 7:06 PM
+
+## 21st September
